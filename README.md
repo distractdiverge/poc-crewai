@@ -1,54 +1,54 @@
-# CrewAI Proof of Concept
+# PocCrewaiDevelopers Crew
 
-This project is a proof of concept for using CrewAI with `uv` for dependency management.
+Welcome to the PocCrewaiDevelopers Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
-## Project Goals
+## Installation
 
-Your original description mentioned:
-"A Simple proof of concept that uses crew ai to simulate a development team."
+Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
-And for the second phase:
-"The larger / later role will be to simulate multiple teams, and apply the patterns from team topologies to the crew ai teams."
+First, if you haven't already, install uv:
 
-I've integrated these into the goals below.
+```bash
+pip install uv
+```
 
-1.  **Phase 1 (Current):** Simulate a simple development team using CrewAI.
-2.  **Phase 2 (Future):** Simulate multiple teams and apply patterns from Team Topologies to the CrewAI teams.
+Next, navigate to your project directory and install the dependencies:
 
-## Setup
+(Optional) Lock the dependencies and install them by using the CLI command:
+```bash
+crewai install
+```
+### Customizing
 
-1.  **Clone the repository (if you haven't already):**
-    ```bash
-    # If you've already cloned, navigate to the project directory:
-    cd poc-crewai 
-    # Otherwise, clone it:
-    # git clone <your-repo-url>
-    # cd poc-crewai
-    ```
+**Add your `OPENAI_API_KEY` into the `.env` file**
 
-2.  **Set up the virtual environment and install dependencies:**
-    Make sure you have `uv` installed. If not, you can install it by following the instructions [here](https://github.com/astral-sh/uv).
-    ```bash
-    uv venv
-    source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
-    uv pip install -e .
-    ```
-
-3.  **Set up your API keys:**
-    Create a `.env` file in the project root (i.e., `/Users/allielapinski/git/poc-crewai/.env`) and add your API keys. For example, if you are using Groq for the LLM:
-    ```env
-    GROQ_API_KEY=your_groq_api_key_here
-    ```
-    The `main.py` is currently set up to use Groq, but you can modify it to use other LLM providers (e.g., OpenAI, Anthropic). Remember to install the corresponding Python package (e.g., `langchain-openai`) via `uv pip install langchain-openai` and update `main.py`.
+- Modify `src/poc_crewai_developers/config/agents.yaml` to define your agents
+- Modify `src/poc_crewai_developers/config/tasks.yaml` to define your tasks
+- Modify `src/poc_crewai_developers/crew.py` to add your own logic, tools and specific args
+- Modify `src/poc_crewai_developers/main.py` to add custom inputs for your agents and tasks
 
 ## Running the Project
 
-To run the example crew:
+To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
 
 ```bash
-source .venv/bin/activate  # If you haven't already activated the venv
-python -m poc_crewai.main
+$ crewai run
 ```
 
-You can change the topic researched by the crew by editing the `topic_to_research` variable in `poc_crewai/main.py`.
+This command initializes the poc-crewai-developers Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
+This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+
+## Understanding Your Crew
+
+The poc-crewai-developers Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+
+## Support
+
+For support, questions, or feedback regarding the PocCrewaiDevelopers Crew or crewAI.
+- Visit our [documentation](https://docs.crewai.com)
+- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
+- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
+- [Chat with our docs](https://chatg.pt/DWjSBZn)
+
+Let's create wonders together with the power and simplicity of crewAI.
