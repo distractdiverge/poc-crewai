@@ -66,3 +66,27 @@ def test():
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python main.py <command>")
+        print("Commands:")
+        print("  run: Run the crew.")
+        print("  train: Train the crew for a given number of iterations.")
+        print("  replay: Replay the crew execution from a specific task.")
+        print("  test: Test the crew execution and returns the results.")
+        sys.exit(1)
+
+    command = sys.argv[1]
+    if command == "run":
+        run()
+    elif command == "train":
+        train()
+    elif command == "replay":
+        replay()
+    elif command == "test":
+        test()
+    else:
+        print(f"Unknown command: {command}")
+        sys.exit(1)
