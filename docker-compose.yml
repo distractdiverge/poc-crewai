@@ -1,13 +1,5 @@
 services:
-  openwebui:
-    image: ghcr.io/open-webui/open-webui:latest
-    ports:
-      - "3000:3000"
-    volumes:
-      - openwebui_data:/data
-    env_file:
-      - .env
-
+  
   qdrant:
     image: qdrant/qdrant:latest
     ports:
@@ -27,7 +19,6 @@ services:
       - .:/app
     depends_on:
       - qdrant
-      - openwebui
     env_file:
       - .env
   
