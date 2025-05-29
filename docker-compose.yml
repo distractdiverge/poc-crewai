@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  openwebui:
+    image: open-webui/open-webui:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - openwebui_data:/data
+    env_file:
+      - .env
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant
+    env_file:
+      - .env
+
+  crewai-wrapper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - qdrant
+      - openwebui
+    env_file:
+      - .env
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - OPENWEBUI_HOST=openwebui
+      - OPENWEBUI_PORT=3000
+
+volumes:
+  openwebui_data:
+  qdrant_data:
