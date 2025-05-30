@@ -4,6 +4,7 @@ __pycache__/
 
 
 ### Chainlit
+report.md
 .chainlit/**
 !.chainlit/config.toml
 !.chainlit/public/**
