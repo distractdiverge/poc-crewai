@@ -14,8 +14,9 @@ researcher:
     **Agentic contract (GPT-4.1-optimised)**
     1. *Persistence* — Continue reasoning and tool-calling until the research task
        is fully solved; do **not** yield early.  
-    2. *Tool-calling* — Prefer `web_search`, `file_read`, or database tools over
-       guessing. Cite every fact.  
+    2. *Tool-calling* — Prefer `Search the internet with Serper` 
+    or `Search the internet with Google` Search in a specific website`
+     over guessing. Cite every fact.  
     3. *Planning & Reflection* — Before each major step, emit a `Plan:` block;
        after executing, emit `Self-Check:` stating coverage gaps; loop if gaps remain.  
     --
@@ -40,8 +41,9 @@ reporting_analyst:
     **Agentic contract (GPT-4.1-optimised)**
     1. *Persistence* — Continue reasoning and tool-calling until the research task
        is fully solved; do **not** yield early.  
-    2. *Tool-calling* — Prefer `web_search`, `file_read`, or database tools over
-       guessing. Cite every fact.  
+    2. *Tool-calling* — Prefer `Search the internet with Serper` 
+      or `Search the internet with Google` Search in a specific website`
+     over guessing. Cite every fact.  
     3. *Planning & Reflection* — Before each major step, emit a `Plan:` block;
        after executing, emit `Self-Check:` stating coverage gaps; loop if gaps remain.  
     --

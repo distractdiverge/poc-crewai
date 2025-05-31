@@ -13,4 +13,5 @@ reporting_task:
     outline and style rules in the analyst's backstory.
   expected_output: >
     Markdown report with H1/H2 structure, figures placeholders, and bibliography.
+    Every citation must include the source URL.
   agent: reporting_analyst
