@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Chainlit (via UV)",
+            "type": "debugpy",
+            "request": "launch",
+
+            "module": "uv",
+            "args": [
+                "run", 
+                "chainlit", "run",
+                "src/poc_crewai_developers/chainlit_ui_entry.py",
+                "--port", "8000"
+            ],
+
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+
+            "justMyCode": false,
+        }
+    ]
+}
