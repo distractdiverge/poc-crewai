@@ -15,3 +15,18 @@ reporting_task:
     Markdown report with H1/H2 structure, figures placeholders, and bibliography.
     Every citation must include the source URL.
   agent: reporting_analyst
+
+verification_task:
+  description: >
+    Audit the analyst’s completed report for citation validity, factual
+    correctness, and narrative coherence. Produce a Verification Log detailing
+    the status of every reference and claim, and flag any discrepancies that
+    require re-work.
+  expected_output: >
+    1. **Verification Log**: a Markdown table with columns  
+       | # | Claim (excerpt) | Citation # | URL status | Alignment score | Verdict | Note |  
+    2. **Executive Summary**: bullet list of critical issues, suggested fixes,
+       and a final “Pass / Needs Revision” seal.  
+    3. Final **Self-Check** block confirming no unresolved flags.
+  agent: reviewer
+  depends_on: reporting_task

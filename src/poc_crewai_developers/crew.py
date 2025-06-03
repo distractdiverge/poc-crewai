@@ -38,10 +38,16 @@ class PocCrewaiDevelopers():
             config=self.agents_config['reporting_analyst'], # type: ignore[index]
             verbose=True
         )
+    
+    @agent
+    def reviewer(self) -> Agent:
+        """New fact-checking agent"""
+        return Agent(
+            config=self.agents_config['reviewer'], # type: ignore[index]
+            reasoning=True,
+            verbose=True
+        )
 
-    # To learn more about structured task outputs,
-    # task dependencies, and task callbacks, check out the documentation:
-    # https://docs.crewai.com/concepts/tasks#overview-of-a-task
     @task
     def research_task(self) -> Task:
         return Task(
@@ -54,12 +60,18 @@ class PocCrewaiDevelopers():
         return Task(
             config=self.tasks_config['reporting_task'] # type: ignore[index]
         )
+    
+    @task
+    def verification_task(self) -> Task:
+        """Runs after reporting_task to validate every citation & claim"""
+        return Task(
+            config=self.tasks_config['verification_task'], # type: ignore[index]
+            tools=[SerperDevTool(), WebsiteSearchTool()]
+        )
 
     @crew
     def crew(self) -> Crew:
         """Creates the PocCrewaiDevelopers crew"""
-        # To learn how to add knowledge sources to your crew, check out the documentation:
-        # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
         return Crew(
             agents=self.agents, # Automatically created by the @agent decorator
