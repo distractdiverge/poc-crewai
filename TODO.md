@@ -1,0 +1,1 @@
+Right now, not every response from an agent in the crew is being output to the chainlit UI. We need to figure out how to get each output from every task and agent printed in chainlit. We need to display the planning steps, self-checks and final result.

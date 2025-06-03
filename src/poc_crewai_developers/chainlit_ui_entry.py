@@ -1,7 +1,6 @@
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-
 import chainlit as cl 
 from poc_crewai_developers.crew import PocCrewaiDevelopers
 from datetime import datetime
