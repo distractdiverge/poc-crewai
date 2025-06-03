@@ -2,9 +2,10 @@
 name = "poc_crewai_developers"
 version = "0.1.0"
 description = "poc-crewai-developers using crewAI"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [{ name = "Astrid Lapinski", email = "the.astrid.solveig@gmail.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
+    "crewai>=0.121.1",
     "chainlit>=2.5.5",
     "crewai[tools]>=0.119.0,<1.0.0",
 ]
