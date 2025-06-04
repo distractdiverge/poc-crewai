@@ -5,22 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Chainlit (via UV)",
+            "name": "Debug Current File",
             "type": "debugpy",
             "request": "launch",
 
-            "module": "uv",
+            "python": "${workspaceFolder}/.venv/bin/python",
+
+            "program": "${file}",
             "args": [
-                "run", 
-                "chainlit", "run",
-                "src/poc_crewai_developers/chainlit_ui_entry.py",
                 "--port", "8000"
             ],
 
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
 
-            "justMyCode": false,
+            "justMyCode": true,
         }
     ]
 }
