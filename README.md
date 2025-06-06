@@ -1,4 +1,4 @@
-# PocCrewaiDevelopers Crew
+# PocCrewai research team Crew
 
 ## Chainlit UI
 ```bash
